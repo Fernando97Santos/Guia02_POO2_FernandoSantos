@@ -30,7 +30,7 @@
                     </ul>
                 </div>
                 <div id="logo">
-                    <h1><a href="#">Guia 1 POO2</a></h1>
+                    <h1><a href="#">Guia 2 POO2</a></h1>
                     <span>Fernando Santos </span> </div>
             </div>
         </div>
@@ -38,9 +38,98 @@
         <div id="wrapper2">
             <div id="newsletter" class="container">
                 <div class="title">
-                    <h2>Reportes</h2>
+                    <h2>Agregar Persona</h2>
                 </div>
-                
+                <div class="content">
+                    <h1>${mensAler}</h1>
+                    <form method="post" name="frmPers" id="frmPers" action="PersServ">
+                        <div class="row">
+                            <input type="hidden" name="CodiPers" value="${CodiPers}"/>
+                            <div class="column1" >
+                                <label>Nombre:</label>
+                                <input type="text" class="text" id="NombPers" name="NombPers" placeholder="Nombre" value="${NombPers}"/>
+                            </div>
+                            <div class="column4">
+                                <label>Apellido:</label>
+                                <input type="text" class="text" id="ApelPers" name="ApelPers" placeholder="Apellido" value="${ApelPers}"/>
+                            </div>
+                            <div class="column1">
+                                <label>Tipo:</label>
+                                <select name="cmbCodiTipoPers">
+                                   <%/*<jsp:useBean id="beanCodiTipoPers" class="com.sv.udb.controlador.TipoPersonaCtrl" scope="page"/>
+                                    <c:forEach items="${beanCodiTipoPers.consTodo()}" var="fila">
+                                        <c:choose>
+                                            <c:when test="${fila.CodiTipoPers eq cmbCodiTipoPers}">
+                                                <option name="CodiTipoPers" id="CodiTipoPers" selected="" value="${fila.CodiTipoPers}">${fila.NombTipoPers}</option>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <option name="CodiTipoPers" id="CodiTipoPers"  value="${fila.CodiTipoPers}">${fila.NombTipoPers}</option>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </c:forEach>*/%>
+                                </select>
+                            </div>
+                            <div class="column4">
+                                <label>Genero:</label>
+                                <input type="text" class="text" id="GenePers" name="GenePers" placeholder="Genero" value="${GenePers}"/>
+                            </div>
+                            <div class="column1">
+                                <label for="date1">Fecha de nacimiento:</label>
+                                <input type="date" class="text" name="FechNaciPers" id="FechNaciPers"  placeholder="00000000-0" value="${FechNaciPers}">
+                            </div>
+                            <div class="column4">
+                                <label>DUI:</label>
+                                <input type="number" class="text" id="GenePers" name="DuiPers" placeholder="00000000-0" value="${DuiPers}"/>
+                            </div>
+                            <div class="column1">
+                                <label>NIT:</label>
+                                <input type="number" class="text" id="GenePers" name="NitPers" placeholder="NIT" value="${NitPers}"/>
+                            </div>
+                            <div class="column4">
+                                <label>Tipo de sangre:</label>
+                                <input type="text" class="text" id="TipoSangPers" name="TipoSangPers" placeholder="Tipo de sangre" value="${TipoSangPers}"/>
+                            </div>
+                            <div class="column1">
+                                <label>Ubicacion:</label>
+                                <select class="browser-default" name="cmb2" id="cmb2">
+                                   <jsp:useBean id="beanCodiUbic" class="com.sv.udb.controlador.UbicacionCtrl" scope="page"/>
+                                    <c:forEach items="${beanCodiUbic.consTodo()}" var="fila">
+                                        <c:choose>
+                                            <c:when test="${fila.coditipopers eq cmb2}">
+                                                <option name="CodiUbic" id="CodiUbic" selected="" value="${fila.CodiUbic}">${fila.NombUbic}</option>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <option name="CodiUbic" id="CodiUbic"  value="${fila.CodiUbic}">${fila.NombUbic}</option>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </c:forEach>
+                                </select>
+                            </div>
+                            <div class="column4">
+                                <label>Fecha de alta:</label>
+                                <input type="date" class="text" name="FechAlta" id="FechAlta"  value="${FechAlta}">
+                            </div>
+                            <div class="column1">
+                                <label>Fecha de baja:</label>
+                                <input type="date" class="text" name="FechBaja" id="FechBaja"  value="${FechBaja}">
+                            </div>
+                            <div class="column4">
+                                <label>NIT:</label>
+                                <input type="number" class="text" id="EstaPers" name="EstaPers" placeholder="Estado" value="${EstaPers}"/>
+                            </div>
+                            
+                            <div class="column1">
+                            <input type="submit" class="button-small" id="boton" name="cursBton" value="Guardar"/>
+                            </div>
+                            <div class="column4">
+                            <input type="submit" class="button-small" id="boton" name="cursBton" value="Modificar"/>
+                            </div>
+                            <div class="column2">
+                            <input type="submit" class="button-small" id="boton" name="cursBton" value="Eliminar" onclick="return confirm('¿Estas seguro que deseas eliminar este registro?');"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
