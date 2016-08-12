@@ -45,6 +45,10 @@
                     <form method="post" name="frmPers" id="frmPers" action="PersServ">
                         <div class="row">
                             <input type="hidden" name="CodiPers" value="${CodiPers}"/>
+                            <div class="row">
+                                <label>Seleccione una foto:</label>
+                                <input type="file" class="text" id="FotoPers"  />
+                            </div>
                             <div class="column1" >
                                 <label>Nombre:</label>
                                 <input type="text" class="text" id="NombPers" name="NombPers" placeholder="Nombre" value="${NombPers}"/>
@@ -56,17 +60,17 @@
                             <div class="column1">
                                 <label>Tipo:</label>
                                 <select name="cmbCodiTipoPers">
-                                   <%/*<jsp:useBean id="beanCodiTipoPers" class="com.sv.udb.controlador.TipoPersonaCtrl" scope="page"/>
+                                   <jsp:useBean id="beanCodiTipoPers" class="com.sv.udb.controlador.TipoPersonaCtrl" scope="page"/>
                                     <c:forEach items="${beanCodiTipoPers.consTodo()}" var="fila">
                                         <c:choose>
-                                            <c:when test="${fila.CodiTipoPers eq cmbCodiTipoPers}">
-                                                <option name="CodiTipoPers" id="CodiTipoPers" selected="" value="${fila.CodiTipoPers}">${fila.NombTipoPers}</option>
+                                            <c:when test="${fila.codiTipoPers eq cmbCodiTipoPers}">
+                                                <option name="CodiTipoPers" id="CodiTipoPers" selected="" value="${fila.codiTipoPers}">${fila.nombTipoPers}</option>
                                             </c:when>
                                             <c:otherwise>
-                                                <option name="CodiTipoPers" id="CodiTipoPers"  value="${fila.CodiTipoPers}">${fila.NombTipoPers}</option>
+                                                <option name="CodiTipoPers" id="CodiTipoPers"  value="${fila.codiTipoPers}">${fila.nombTipoPers}</option>
                                             </c:otherwise>
                                         </c:choose>
-                                    </c:forEach>*/%>
+                                    </c:forEach>
                                 </select>
                             </div>
                             <div class="column4">
@@ -93,13 +97,13 @@
                                 <label>Ubicacion:</label>
                                 <select class="browser-default" name="cmb2" id="cmb2">
                                    <jsp:useBean id="beanCodiUbic" class="com.sv.udb.controlador.UbicacionCtrl" scope="page"/>
-                                    <c:forEach items="${beanCodiUbic.consTodo()}" var="fila">
+                                   <c:forEach items="${beanCodiUbic.consTodo()}" var="fila">
                                         <c:choose>
-                                            <c:when test="${fila.coditipopers eq cmb2}">
-                                                <option name="CodiUbic" id="CodiUbic" selected="" value="${fila.CodiUbic}">${fila.NombUbic}</option>
+                                            <c:when test="${fila.codiUbic eq cmb2}">
+                                                <option name="CodiUbic" id="CodiUbic" selected="" value="${fila.codiUbic}">${fila.nombUbic}</option>
                                             </c:when>
                                             <c:otherwise>
-                                                <option name="CodiUbic" id="CodiUbic"  value="${fila.CodiUbic}">${fila.NombUbic}</option>
+                                                <option name="CodiUbic" id="CodiUbic"  value="${fila.codiUbic}">${fila.nombUbic}</option>
                                             </c:otherwise>
                                         </c:choose>
                                     </c:forEach>
